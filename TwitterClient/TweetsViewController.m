@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 rossmooney. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TweetsViewController.h"
 
-@interface ViewController ()
+@interface TweetsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation TweetsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
