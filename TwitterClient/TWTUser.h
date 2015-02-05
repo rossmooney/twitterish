@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@class CDUser;
 
 @interface TWTUser : NSObject
 
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
+
+- (id)initWithManagedObject:(CDUser *)managedObject;
 
 @end

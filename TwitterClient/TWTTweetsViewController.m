@@ -54,13 +54,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TWTTweetTableViewCell *cell = (TWTTweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TWTTweetTableViewCell" forIndexPath:indexPath];
     
-//    TWTTweet *tweet = self.tweets[indexPath.row];
-//    cell.tweetMessage.text = tweet.tweetMessage;
-//    cell.timestamp.text = @"TIMESTAMP";
-//    
-//    TWTUser *user = [[TWTTwitterAPI sharedInstance] userForId:tweet.userId];
-//    cell.user.text = user.username;
-//    
+    TWTTweet *tweet = self.tweets[indexPath.row];
+    cell.tweetMessage.text = tweet.tweetMessage;
+    cell.timestamp.text = @"TIMESTAMP";
+//
+    TWTUser *user = [[TWTTwitterAPI sharedInstance] userForId:tweet.userId];
+    cell.user.text = user.username;
+//
     return cell;
 }
 

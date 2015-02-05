@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class CDTweet;
 
 @interface TWTTweet : NSObject
 
@@ -14,5 +15,7 @@
 @property (nonatomic, copy)     NSString *userId;
 @property (nonatomic, copy)     NSString *tweetMessage;
 @property (nonatomic, strong)   NSDate   *timestamp;
+
+- (id)initWithManagedObject:(CDTweet *)managedObject;
 
 @end

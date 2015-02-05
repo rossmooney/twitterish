@@ -18,6 +18,7 @@
 
 //API Methods
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password completion:(void (^)(NSError *error))completionHandler;
+- (void)signUpWithUsername:(NSString *)username andPassword:(NSString *)password completion:(void (^)(NSError *error))completionHandler;
 - (void)requestTweetsWithCompletion:(void (^)(NSArray *tweets))completionHandler;
 - (void)sendTweetWithMessage:(NSString *)message completion:(void (^)(NSError *error))completionHandler;
 - (TWTUser *)userForId:(NSString *)userId;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7192C4781A82E2C200A516FE /* TWTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7192C4771A82E2C200A516FE /* TWTMenuViewController.m */; };
 		71B92E5A1A82B439006DB013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E591A82B439006DB013 /* main.m */; };
 		71B92E5D1A82B439006DB013 /* TWTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E5C1A82B439006DB013 /* TWTAppDelegate.m */; };
 		71B92E601A82B439006DB013 /* TwitterClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E5E1A82B439006DB013 /* TwitterClient.xcdatamodeld */; };
@@ -34,7 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		71B92E541A82B439006DB013 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TwitterClient.app; path = "/Users/rmooney/Mobiquity/Source/ResearchAndDevelopment/TwitterClient/build/Debug-iphoneos/TwitterClient.app"; sourceTree = "<absolute>"; };
+		7192C4741A82DBDD00A516FE /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7192C4751A82DBDD00A516FE /* TwitterClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7192C4761A82E2C200A516FE /* TWTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTMenuViewController.h; sourceTree = "<group>"; };
+		7192C4771A82E2C200A516FE /* TWTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTMenuViewController.m; sourceTree = "<group>"; };
 		71B92E581A82B439006DB013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B92E591A82B439006DB013 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71B92E5B1A82B439006DB013 /* TWTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTAppDelegate.h; sourceTree = "<group>"; };
@@ -45,7 +49,6 @@
 		71B92E651A82B439006DB013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71B92E671A82B439006DB013 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71B92E6A1A82B439006DB013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		71B92E701A82B439006DB013 /* TwitterClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TwitterClientTests.xctest; path = "/Users/rmooney/Mobiquity/Source/ResearchAndDevelopment/TwitterClient/build/Debug-iphoneos/TwitterClientTests.xctest"; sourceTree = "<absolute>"; };
 		71B92E751A82B439006DB013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B92E761A82B439006DB013 /* TwitterClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterClientTests.m; sourceTree = "<group>"; };
 		71B92E801A82B9E0006DB013 /* CDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUser.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 			children = (
 				71B92E561A82B439006DB013 /* TwitterClient */,
 				71B92E731A82B439006DB013 /* TwitterClientTests */,
+				7192C4741A82DBDD00A516FE /* TwitterClient.app */,
+				7192C4751A82DBDD00A516FE /* TwitterClientTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +103,8 @@
 				71B92E5C1A82B439006DB013 /* TWTAppDelegate.m */,
 				71B92E611A82B439006DB013 /* TWTTweetsViewController.h */,
 				71B92E621A82B439006DB013 /* TWTTweetsViewController.m */,
+				7192C4761A82E2C200A516FE /* TWTMenuViewController.h */,
+				7192C4771A82E2C200A516FE /* TWTMenuViewController.m */,
 				71B92E641A82B439006DB013 /* Main.storyboard */,
 				71B92E671A82B439006DB013 /* Images.xcassets */,
 				71B92E691A82B439006DB013 /* LaunchScreen.xib */,
@@ -183,7 +190,7 @@
 			);
 			name = TwitterClient;
 			productName = TwitterClient;
-			productReference = 71B92E541A82B439006DB013 /* TwitterClient.app */;
+			productReference = 7192C4741A82DBDD00A516FE /* TwitterClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 		71B92E6F1A82B439006DB013 /* TwitterClientTests */ = {
@@ -201,7 +208,7 @@
 			);
 			name = TwitterClientTests;
 			productName = TwitterClientTests;
-			productReference = 71B92E701A82B439006DB013 /* TwitterClientTests.xctest */;
+			productReference = 7192C4751A82DBDD00A516FE /* TwitterClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -266,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7192C4781A82E2C200A516FE /* TWTMenuViewController.m in Sources */,
 				71B92E851A82B9E0006DB013 /* CDTweet.m in Sources */,
 				71B92E891A82BEAB006DB013 /* TWTTweetTableViewCell.m in Sources */,
 				71B92E601A82B439006DB013 /* TwitterClient.xcdatamodeld in Sources */,
@@ -466,6 +474,7 @@
 				71B92E7C1A82B439006DB013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71B92E7D1A82B439006DB013 /* Build configuration list for PBXNativeTarget "TwitterClientTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +483,7 @@
 				71B92E7F1A82B439006DB013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
