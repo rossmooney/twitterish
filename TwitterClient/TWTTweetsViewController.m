@@ -28,7 +28,16 @@
     [self updateTweets];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+
+}
+
 - (void)viewDidAppear:(BOOL)animated {
+    //Show menu if not logged in
+    if(![[TWTTwitterAPI sharedInstance] currentUserId]) {
+        [self performSegueWithIdentifier:@"showMenu" sender:self];
+    }
+    
     [self refreshTweets];
 }
 
