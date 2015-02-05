@@ -24,10 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self updateTweets];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self updateTweets];
+    [self refreshTweets];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,24 @@
     [[TWTTwitterAPI sharedInstance] requestTweetsWithCompletion:^(NSArray *tweets) {
         blockSelf.tweets = tweets;
         [blockSelf.tableView reloadData];
+    }];
+}
+
+- (void)refreshTweets {
+    __weak TWTTweetsViewController *blockSelf = self;
+    [[TWTTwitterAPI sharedInstance] requestTweetsWithCompletion:^(NSArray *tweets) {
+        //Check for new tweets
+        if(tweets.count > blockSelf.tweets.count) {
+            NSInteger numberOfNewTweets = tweets.count - blockSelf.tweets.count;
+            
+            NSMutableArray *newTweets = [NSMutableArray array];
+            for(int i = 0; i < numberOfNewTweets; i++) {
+                [newTweets addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+            }
+            
+            blockSelf.tweets = tweets;
+            [self.tableView insertRowsAtIndexPaths:newTweets withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     }];
 }
 
@@ -81,5 +101,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //Tapped a tweet
+}
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+
 }
 @end

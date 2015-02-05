@@ -313,6 +313,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="G8q-vX-2rJ">
                                             <connections>
                                                 <action selector="cancelPressed:" destination="CDz-pX-MYE" id="4Jk-Vx-Ib5"/>
+                                                <segue destination="Qy0-T9-9W8" kind="unwind" identifier="unwindToTweets" unwindAction="prepareForUnwind:" id="2lK-YJ-ZOk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Send" id="C2Y-LI-rge">
@@ -345,14 +346,11 @@
                     </view>
                     <connections>
                         <outlet property="textView" destination="Ttg-oR-bng" id="9RN-hS-Gig"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="returnToTweets" id="SWo-I5-LYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mU8-AO-6sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qy0-T9-9W8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="LAk-P0-V4b"/>
-    </inferredMetricsTieBreakers>
 </document>

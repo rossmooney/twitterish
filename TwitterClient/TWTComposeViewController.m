@@ -33,7 +33,7 @@
     __weak TWTComposeViewController *blockSelf = self;
     [[TWTTwitterAPI sharedInstance] sendTweetWithMessage:self.textView.text completion:^(NSError *error) {
         if(!error) {
-            [blockSelf performSegueWithIdentifier:@"returnToTweets" sender:self];
+            [blockSelf performSegueWithIdentifier:@"unwindToTweets" sender:self];
         }
         else {
             [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -42,7 +42,7 @@
 }
 
 - (IBAction)cancelPressed:(id)sender {
-    [self performSegueWithIdentifier:@"returnToTweets" sender:self];
+    [self performSegueWithIdentifier:@"unwindToTweets" sender:self];
 }
 
 /*
