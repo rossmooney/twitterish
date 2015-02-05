@@ -8,9 +8,11 @@
 
 #import "TWTMenuViewController.h"
 #import "TWTTwitterAPI.h"
+#import "TWTUser.h"
 
 @interface TWTMenuViewController () <UITextViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UILabel     *loggedInAsLabel;
 @property (nonatomic, weak) IBOutlet UITextField *usernameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UIButton    *loginButton;
@@ -43,12 +45,15 @@
 
 - (void)showLoginInterface {
     self.loginButton.hidden = self.signUpButton.hidden = self.usernameField.hidden = self.passwordField.hidden = NO;
-    self.logoutButton.hidden = self.cancelButton.hidden = YES;
+    self.logoutButton.hidden = self.cancelButton.hidden = self.loggedInAsLabel.hidden = YES;
 }
 
 - (void)showLogoutInterface {
     self.loginButton.hidden = self.signUpButton.hidden = self.usernameField.hidden = self.passwordField.hidden = YES;
     self.logoutButton.hidden = self.cancelButton.hidden = NO;
+    NSString *currentUserId = [[TWTTwitterAPI sharedInstance] currentUserId];
+    TWTUser *user = ((TWTUser *)[[TWTTwitterAPI sharedInstance] userForId:currentUserId]);
+    self.loggedInAsLabel.text = [NSString stringWithFormat:@"Logged in as %@", user.username];
 }
 
 #pragma mark - IBActions
@@ -100,5 +105,10 @@
 
 - (BOOL)disablesAutomaticKeyboardDismissal {
     return NO;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

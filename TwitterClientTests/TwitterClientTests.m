@@ -26,49 +26,40 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
-- (void)testMenu {
-    [self signUp];
+- (void)testSignUp {
+    [[TWTTwitterAPI sharedInstance] clearUsers];
+    [[TWTTwitterAPI sharedInstance] clearTweets];
     
-    [self login];
-}
-
-- (void)signUp {
     NSString *testUser = @"testUser";
     NSString *testPassword = @"testPassword";
     
     [[TWTTwitterAPI sharedInstance] signUpWithUsername:testUser andPassword:testPassword completion:^(NSError *error) {
-        if(error) {
-            XCTAssert(NO, @"Fail");
-        }
-        else {
-            XCTAssert(YES, @"Pass");
-        }
+        XCTAssertNil(error);
     }];
 }
 
-- (void)login {
+- (void)testLogout {
+    [[TWTTwitterAPI sharedInstance] logoutWithCompletion:^{
+        XCTAssertNil([[TWTTwitterAPI sharedInstance] currentUserId]);
+    }];
+}
+
+- (void)testLogin {
     NSString *testUser = @"testUser";
     NSString *testPassword = @"testPassword";
     
-    [[TWTTwitterAPI sharedInstance] signUpWithUsername:testUser andPassword:testPassword completion:^(NSError *error) {
-        if(error) {
-            XCTAssert(NO, @"Fail");
-        }
-        else {
-            XCTAssert(YES, @"Pass");
-        }
+    [[TWTTwitterAPI sharedInstance] loginWithUsername:testUser andPassword:testPassword completion:^(NSError *error) {
+        XCTAssertNil(error);
+    }];
+}
+
+- (void)testComposeTweet {
+    NSString *testMessage = @"This is a test message";
+    
+    [[TWTTwitterAPI sharedInstance] sendTweetWithMessage:testMessage completion:^(NSError *error) {
+        [[TWTTwitterAPI sharedInstance] requestTweetsWithCompletion:^(NSArray *tweets) {
+            XCTAssertEqual(tweets.count, 1);
+        }];
     }];
 }
 

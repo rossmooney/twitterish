@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 @class TWTUser;
 
+extern NSString * const kCurrentUserID;
+
 @interface TWTTwitterAPI : NSObject
 
 @property (nonatomic, copy) NSString *currentUserId;
@@ -30,4 +32,7 @@
 //Users
 - (TWTUser *)userForId:(NSString *)userId;
 
+//Deleting
+- (void)clearUsers;
+- (void)clearTweets;
 @end

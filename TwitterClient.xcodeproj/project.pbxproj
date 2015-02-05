@@ -100,16 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				71B92E8E1A82CF6F006DB013 /* API */,
+				71C82DC21A83190500C7F52E /* View Controllers */,
 				71B92E8A1A82BF75006DB013 /* Views */,
 				71B92E861A82B9F0006DB013 /* Model */,
 				71B92E5B1A82B439006DB013 /* TWTAppDelegate.h */,
 				71B92E5C1A82B439006DB013 /* TWTAppDelegate.m */,
-				71B92E611A82B439006DB013 /* TWTTweetsViewController.h */,
-				71B92E621A82B439006DB013 /* TWTTweetsViewController.m */,
-				71C82DBF1A8300A000C7F52E /* TWTComposeViewController.h */,
-				71C82DC01A8300A000C7F52E /* TWTComposeViewController.m */,
-				7192C4761A82E2C200A516FE /* TWTMenuViewController.h */,
-				7192C4771A82E2C200A516FE /* TWTMenuViewController.m */,
 				71B92E641A82B439006DB013 /* Main.storyboard */,
 				71B92E671A82B439006DB013 /* Images.xcassets */,
 				71B92E691A82B439006DB013 /* LaunchScreen.xib */,
@@ -176,6 +171,19 @@
 				71B92E8C1A82CF6B006DB013 /* TWTTwitterAPI.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		71C82DC21A83190500C7F52E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71B92E611A82B439006DB013 /* TWTTweetsViewController.h */,
+				71B92E621A82B439006DB013 /* TWTTweetsViewController.m */,
+				71C82DBF1A8300A000C7F52E /* TWTComposeViewController.h */,
+				71C82DC01A8300A000C7F52E /* TWTComposeViewController.m */,
+				7192C4761A82E2C200A516FE /* TWTMenuViewController.h */,
+				7192C4771A82E2C200A516FE /* TWTMenuViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

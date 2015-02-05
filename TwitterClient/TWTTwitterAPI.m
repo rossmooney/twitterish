@@ -14,6 +14,9 @@
 #import "CDTweet.h"
 #import "CoreData/CoreData.h"
 
+NSString * const kCurrentUserID = @"CurrentUserID";
+
+
 @implementation TWTTwitterAPI
 
 + (id)sharedInstance {
@@ -23,6 +26,11 @@
         sharedTwitterAPI = [[self alloc] init];
     });
     return sharedTwitterAPI;
+}
+
+- (void)setCurrentUserId:(NSString *)currentUserId {
+    _currentUserId = currentUserId;
+    [[NSUserDefaults standardUserDefaults] setObject:_currentUserId forKey:kCurrentUserID];
 }
 
 #pragma mark - API Methods
@@ -165,5 +173,36 @@
     CFRelease(uuid);
     
     return uuidString;
+}
+
+- (void)clearUsers {
+    NSFetchRequest *allUsers = [[NSFetchRequest alloc] init];
+    [allUsers setEntity:[NSEntityDescription entityForName:@"CDUser" inManagedObjectContext:[self managedObjectContext]]];
+    [allUsers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError * error = nil;
+    NSArray * users = [[self managedObjectContext] executeFetchRequest:allUsers error:&error];
+
+    for (NSManagedObject * user in users) {
+        [[self managedObjectContext] deleteObject:user];
+    }
+    NSError *saveError = nil;
+    [[self managedObjectContext] save:&saveError];
+
+}
+
+- (void)clearTweets {
+    NSFetchRequest *allTweets = [[NSFetchRequest alloc] init];
+    [allTweets setEntity:[NSEntityDescription entityForName:@"CDTweet" inManagedObjectContext:[self managedObjectContext]]];
+    [allTweets setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError * error = nil;
+    NSArray * tweets = [[self managedObjectContext] executeFetchRequest:allTweets error:&error];
+    
+    for (NSManagedObject * tweet in tweets) {
+        [[self managedObjectContext] deleteObject:tweet];
+    }
+    NSError *saveError = nil;
+    [[self managedObjectContext] save:&saveError];
 }
 @end

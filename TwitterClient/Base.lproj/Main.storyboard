@@ -210,16 +210,6 @@
                                     <action selector="cancelPressed:" destination="ojo-xE-kSa" eventType="touchUpInside" id="W9O-tK-4z9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter(ish)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDz-ZX-7tf">
-                                <rect key="frame" x="181" y="73" width="238" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="Ag6-dX-g5M"/>
-                                    <constraint firstAttribute="width" constant="238" id="VzY-zK-psa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-C3-OLU">
                                 <rect key="frame" x="128" y="231" width="344" height="30"/>
                                 <color key="backgroundColor" red="0.30385142539999999" green="0.30385142539999999" blue="0.30385142539999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,6 +225,25 @@
                                     <action selector="logoutPressed:" destination="ojo-xE-kSa" eventType="touchUpInside" id="zHf-dm-mnK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter(ish)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDz-ZX-7tf">
+                                <rect key="frame" x="181" y="73" width="238" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Ag6-dX-g5M"/>
+                                    <constraint firstAttribute="width" constant="238" id="VzY-zK-psa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hao-3n-hvw">
+                                <rect key="frame" x="248" y="156" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MqT-0r-7nb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -253,12 +262,14 @@
                             <constraint firstItem="Jle-Qv-SXs" firstAttribute="top" secondItem="O5R-NF-U5n" secondAttribute="bottom" constant="102" id="N7x-dr-EiY"/>
                             <constraint firstItem="5ww-k2-U9P" firstAttribute="leading" secondItem="Jle-Qv-SXs" secondAttribute="leading" id="QO3-16-Csf"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="trailing" secondItem="KxK-Kc-eGj" secondAttribute="trailing" id="S4Z-kK-EW0"/>
+                            <constraint firstAttribute="centerX" secondItem="hao-3n-hvw" secondAttribute="centerX" id="Zy9-aY-4Uf"/>
                             <constraint firstItem="qDz-ZX-7tf" firstAttribute="top" secondItem="O5R-NF-U5n" secondAttribute="bottom" constant="53" id="fek-r8-O9o"/>
                             <constraint firstAttribute="centerX" secondItem="KxK-Kc-eGj" secondAttribute="centerX" id="fgH-rS-ayL"/>
                             <constraint firstAttribute="centerX" secondItem="xuf-DW-hGn" secondAttribute="centerX" id="kBo-Bv-W1J"/>
                             <constraint firstAttribute="bottom" secondItem="xuf-DW-hGn" secondAttribute="bottom" constant="179" id="mIs-eA-V7H"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="trailing" secondItem="Jle-Qv-SXs" secondAttribute="trailing" id="mTr-PT-jk4"/>
                             <constraint firstAttribute="centerX" secondItem="qDz-ZX-7tf" secondAttribute="centerX" id="mwS-jK-Ozj"/>
+                            <constraint firstItem="hao-3n-hvw" firstAttribute="top" secondItem="qDz-ZX-7tf" secondAttribute="bottom" constant="29" id="yYS-3l-dRj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -268,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="5ww-k2-U9P" id="FJS-dH-zjA"/>
+                        <outlet property="loggedInAsLabel" destination="hao-3n-hvw" id="Af4-9G-rVT"/>
                         <outlet property="loginButton" destination="xuf-DW-hGn" id="v1i-s4-QTk"/>
                         <outlet property="logoutButton" destination="Pdg-C3-OLU" id="a34-Y1-8uS"/>
                         <outlet property="passwordField" destination="KxK-Kc-eGj" id="FME-wc-xTh"/>

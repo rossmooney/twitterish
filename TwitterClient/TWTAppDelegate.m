@@ -7,6 +7,7 @@
 //
 
 #import "TWTAppDelegate.h"
+#import "TWTTwitterAPI.h"
 
 @interface TWTAppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Load logged in user
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentUserID];
+    [[TWTTwitterAPI sharedInstance] setCurrentUserId:userId];
+    
     return YES;
 }
 
