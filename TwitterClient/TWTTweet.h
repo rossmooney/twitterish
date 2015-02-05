@@ -17,5 +17,6 @@
 @property (nonatomic, strong)   NSDate   *timestamp;
 
 - (id)initWithManagedObject:(CDTweet *)managedObject;
+- (NSString *)howLongAgo;
 
 @end

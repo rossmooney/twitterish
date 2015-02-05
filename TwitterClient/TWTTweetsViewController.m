@@ -66,11 +66,11 @@
     
     TWTTweet *tweet = self.tweets[indexPath.row];
     cell.tweetMessage.text = tweet.tweetMessage;
-    cell.timestamp.text = @"TIMESTAMP";
-//
+    cell.timestamp.text = [tweet howLongAgo];
+
     TWTUser *user = [[TWTTwitterAPI sharedInstance] userForId:tweet.userId];
     cell.user.text = user.username;
-//
+
     return cell;
 }
 

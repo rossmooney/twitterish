@@ -99,8 +99,14 @@
         }
     }
 
-    NSArray *tweets = [NSArray arrayWithArray:tweetArray];
-    completionHandler(tweets);
+    //Sort by date
+    NSArray *sortedArray = [tweetArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDate *first = [(TWTTweet*)a timestamp];
+        NSDate *second = [(TWTTweet*)b timestamp];
+        return [second compare:first];
+    }];
+
+    completionHandler(sortedArray);
 }
 
 - (void)sendTweetWithMessage:(NSString *)message completion:(void (^)(NSError *error))completionHandler {
