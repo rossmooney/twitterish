@@ -241,11 +241,57 @@
                     <view key="view" contentMode="scaleToFill" id="VYD-bo-QxE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sza-u3-5FU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="l7F-EO-VR0"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Compose" id="M5p-Xr-9sY">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="G8q-vX-2rJ">
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="CDz-pX-MYE" id="4Jk-Vx-Ib5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Send" id="C2Y-LI-rge">
+                                            <connections>
+                                                <action selector="sendPressed:" destination="CDz-pX-MYE" id="Y0q-c6-acL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-oR-bng">
+                                <rect key="frame" x="20" y="50" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sVS-2J-MYt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ttg-oR-bng" firstAttribute="top" secondItem="sza-u3-5FU" secondAttribute="bottom" constant="6" id="4GF-U7-GIK"/>
+                            <constraint firstAttribute="trailing" secondItem="sza-u3-5FU" secondAttribute="trailing" id="JQc-8K-GSz"/>
+                            <constraint firstItem="Ttg-oR-bng" firstAttribute="leading" secondItem="VYD-bo-QxE" secondAttribute="leading" constant="20" id="Jih-8C-7jC"/>
+                            <constraint firstAttribute="trailing" secondItem="Ttg-oR-bng" secondAttribute="trailing" constant="20" id="N63-Vz-3V9"/>
+                            <constraint firstItem="sza-u3-5FU" firstAttribute="top" secondItem="VYD-bo-QxE" secondAttribute="top" id="WyA-FD-nuW"/>
+                            <constraint firstItem="sza-u3-5FU" firstAttribute="leading" secondItem="VYD-bo-QxE" secondAttribute="leading" id="uvQ-Qe-NHs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="Ttg-oR-bng" id="9RN-hS-Gig"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="returnToTweets" id="SWo-I5-LYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mU8-AO-6sD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SWo-I5-LYJ"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -104,7 +104,19 @@
 }
 
 - (void)sendTweetWithMessage:(NSString *)message completion:(void (^)(NSError *error))completionHandler {
+    //Create tweet
+    CDTweet *tweet = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"CDTweet"
+                    inManagedObjectContext:[self managedObjectContext]];
+    tweet.message = message;
+    tweet.timestamp = [NSDate date];
+    tweet.userid = self.currentUserId;
+    tweet.tweetid = [self uuidString];
     
+    //Save changes
+    NSError *saveError;
+    [[self managedObjectContext] save:&saveError];
+    completionHandler(saveError);
 }
 
 - (TWTUser *)userForId:(NSString *)userId {

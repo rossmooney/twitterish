@@ -7,8 +7,11 @@
 //
 
 #import "TWTComposeViewController.h"
+#import "TWTTwitterAPI.h"
 
 @interface TWTComposeViewController ()
+
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 
 @end
 
@@ -22,6 +25,24 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBActions
+
+- (IBAction)sendPressed:(id)sender {
+    __block TWTComposeViewController *blockSelf = self;
+    [[TWTTwitterAPI sharedInstance] sendTweetWithMessage:self.textView.text completion:^(NSError *error) {
+        if(!error) {
+            [blockSelf performSegueWithIdentifier:@"returnToTweets" sender:self];
+        }
+        else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    }];
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    [self performSegueWithIdentifier:@"returnToTweets" sender:self];
 }
 
 /*
