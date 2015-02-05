@@ -79,6 +79,11 @@
     }
 }
 
+- (void)logoutWithCompletion:(void (^)(void))completionHandler {
+    self.currentUserId = nil;
+    completionHandler();
+}
+
 - (void)requestTweetsWithCompletion:(void (^)(NSArray *tweets))completionHandler {
     
     //Check for saved tweets in core data

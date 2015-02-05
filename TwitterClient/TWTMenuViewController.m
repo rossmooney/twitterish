@@ -13,7 +13,10 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *usernameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
-
+@property (nonatomic, weak) IBOutlet UIButton    *loginButton;
+@property (nonatomic, weak) IBOutlet UIButton    *logoutButton;
+@property (nonatomic, weak) IBOutlet UIButton    *cancelButton;
+@property (nonatomic, weak) IBOutlet UIButton    *signUpButton;
 
 @end
 
@@ -27,6 +30,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if([[TWTTwitterAPI sharedInstance] currentUserId]) {
+        [self showLogoutInterface];
+    }
+    else {
+        [self showLoginInterface];
+    }
+}
+
+- (void)showLoginInterface {
+    self.loginButton.hidden = self.signUpButton.hidden = self.usernameField.hidden = self.passwordField.hidden = NO;
+    self.logoutButton.hidden = self.cancelButton.hidden = YES;
+}
+
+- (void)showLogoutInterface {
+    self.loginButton.hidden = self.signUpButton.hidden = self.usernameField.hidden = self.passwordField.hidden = YES;
+    self.logoutButton.hidden = self.cancelButton.hidden = NO;
 }
 
 #pragma mark - IBActions
@@ -61,6 +83,17 @@
             [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
+}
+
+- (IBAction)logoutPressed:(id)sender {
+    [[TWTTwitterAPI sharedInstance] logoutWithCompletion:^{
+        [self showLoginInterface];
+    }];
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    //Return To Tweets
+    [self performSegueWithIdentifier:@"showTweets" sender:self];
 }
 
 #pragma mark - UITextViewDelegate

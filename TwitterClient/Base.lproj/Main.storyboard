@@ -196,6 +196,45 @@
                                     <action selector="loginPressed:" destination="ojo-xE-kSa" eventType="touchUpInside" id="UFN-2d-8ur"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ww-k2-U9P">
+                                <rect key="frame" x="128" y="285" width="344" height="30"/>
+                                <color key="backgroundColor" red="0.30385142539999999" green="0.30385142539999999" blue="0.30385142539999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="344" id="cbp-46-uz5"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="ojo-xE-kSa" eventType="touchUpInside" id="W9O-tK-4z9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter(ish)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDz-ZX-7tf">
+                                <rect key="frame" x="181" y="73" width="238" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Ag6-dX-g5M"/>
+                                    <constraint firstAttribute="width" constant="238" id="VzY-zK-psa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-C3-OLU">
+                                <rect key="frame" x="128" y="231" width="344" height="30"/>
+                                <color key="backgroundColor" red="0.30385142539999999" green="0.30385142539999999" blue="0.30385142539999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="344" id="0DJ-PU-SB0"/>
+                                    <constraint firstAttribute="height" constant="30" id="YGv-4z-Yni"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="ojo-xE-kSa" eventType="touchUpInside" id="zHf-dm-mnK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -203,17 +242,23 @@
                             <constraint firstItem="KxK-Kc-eGj" firstAttribute="top" secondItem="Jle-Qv-SXs" secondAttribute="bottom" constant="33" id="1Fv-I1-pVb"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="leading" secondItem="Jle-Qv-SXs" secondAttribute="leading" id="8cg-l0-xnP"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="leading" secondItem="X9z-ZX-5hY" secondAttribute="leading" id="BJt-Ls-6cq"/>
+                            <constraint firstItem="5ww-k2-U9P" firstAttribute="centerY" secondItem="gg4-Ko-IBU" secondAttribute="centerY" id="ByX-9v-ZjD"/>
+                            <constraint firstItem="Pdg-C3-OLU" firstAttribute="top" secondItem="qDz-ZX-7tf" secondAttribute="bottom" constant="104" id="EMt-ly-EEU"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="trailing" secondItem="X9z-ZX-5hY" secondAttribute="trailing" id="G8B-kl-Bh3"/>
                             <constraint firstAttribute="centerX" secondItem="X9z-ZX-5hY" secondAttribute="centerX" id="Kdx-QV-oST"/>
                             <constraint firstItem="X9z-ZX-5hY" firstAttribute="top" secondItem="xuf-DW-hGn" secondAttribute="bottom" constant="23" id="Kun-rm-sSA"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="top" secondItem="KxK-Kc-eGj" secondAttribute="bottom" constant="29" id="L8K-Ql-5pc"/>
+                            <constraint firstAttribute="centerX" secondItem="Pdg-C3-OLU" secondAttribute="centerX" id="LZg-Wn-oIw"/>
                             <constraint firstAttribute="centerX" secondItem="Jle-Qv-SXs" secondAttribute="centerX" id="MNS-3d-MxN"/>
                             <constraint firstItem="Jle-Qv-SXs" firstAttribute="top" secondItem="O5R-NF-U5n" secondAttribute="bottom" constant="102" id="N7x-dr-EiY"/>
+                            <constraint firstItem="5ww-k2-U9P" firstAttribute="leading" secondItem="Jle-Qv-SXs" secondAttribute="leading" id="QO3-16-Csf"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="trailing" secondItem="KxK-Kc-eGj" secondAttribute="trailing" id="S4Z-kK-EW0"/>
+                            <constraint firstItem="qDz-ZX-7tf" firstAttribute="top" secondItem="O5R-NF-U5n" secondAttribute="bottom" constant="53" id="fek-r8-O9o"/>
                             <constraint firstAttribute="centerX" secondItem="KxK-Kc-eGj" secondAttribute="centerX" id="fgH-rS-ayL"/>
                             <constraint firstAttribute="centerX" secondItem="xuf-DW-hGn" secondAttribute="centerX" id="kBo-Bv-W1J"/>
                             <constraint firstAttribute="bottom" secondItem="xuf-DW-hGn" secondAttribute="bottom" constant="179" id="mIs-eA-V7H"/>
                             <constraint firstItem="xuf-DW-hGn" firstAttribute="trailing" secondItem="Jle-Qv-SXs" secondAttribute="trailing" id="mTr-PT-jk4"/>
+                            <constraint firstAttribute="centerX" secondItem="qDz-ZX-7tf" secondAttribute="centerX" id="mwS-jK-Ozj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -222,7 +267,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="5ww-k2-U9P" id="FJS-dH-zjA"/>
+                        <outlet property="loginButton" destination="xuf-DW-hGn" id="v1i-s4-QTk"/>
+                        <outlet property="logoutButton" destination="Pdg-C3-OLU" id="a34-Y1-8uS"/>
                         <outlet property="passwordField" destination="KxK-Kc-eGj" id="FME-wc-xTh"/>
+                        <outlet property="signUpButton" destination="X9z-ZX-5hY" id="8OK-az-UoT"/>
                         <outlet property="usernameField" destination="Jle-Qv-SXs" id="Cn4-yZ-Zt3"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="showTweets" id="LAk-P0-V4b"/>
                     </connections>
@@ -292,6 +341,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SWo-I5-LYJ"/>
+        <segue reference="LAk-P0-V4b"/>
     </inferredMetricsTieBreakers>
 </document>

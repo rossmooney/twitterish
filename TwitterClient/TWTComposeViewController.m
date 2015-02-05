@@ -30,7 +30,7 @@
 #pragma mark - IBActions
 
 - (IBAction)sendPressed:(id)sender {
-    __block TWTComposeViewController *blockSelf = self;
+    __weak TWTComposeViewController *blockSelf = self;
     [[TWTTwitterAPI sharedInstance] sendTweetWithMessage:self.textView.text completion:^(NSError *error) {
         if(!error) {
             [blockSelf performSegueWithIdentifier:@"returnToTweets" sender:self];

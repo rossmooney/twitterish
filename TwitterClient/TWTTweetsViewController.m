@@ -48,7 +48,7 @@
 #pragma mark - Twitter API Methods
 
 - (void)updateTweets {
-    __block TWTTweetsViewController *blockSelf = self;
+    __weak TWTTweetsViewController *blockSelf = self;
     [[TWTTwitterAPI sharedInstance] requestTweetsWithCompletion:^(NSArray *tweets) {
         blockSelf.tweets = tweets;
         [blockSelf.tableView reloadData];

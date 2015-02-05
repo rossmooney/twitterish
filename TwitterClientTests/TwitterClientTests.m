@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 rossmooney. All rights reserved.
 //
 
+#import "TWTTwitterAPI.h"
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
@@ -34,6 +35,40 @@
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
+    }];
+}
+
+- (void)testMenu {
+    [self signUp];
+    
+    [self login];
+}
+
+- (void)signUp {
+    NSString *testUser = @"testUser";
+    NSString *testPassword = @"testPassword";
+    
+    [[TWTTwitterAPI sharedInstance] signUpWithUsername:testUser andPassword:testPassword completion:^(NSError *error) {
+        if(error) {
+            XCTAssert(NO, @"Fail");
+        }
+        else {
+            XCTAssert(YES, @"Pass");
+        }
+    }];
+}
+
+- (void)login {
+    NSString *testUser = @"testUser";
+    NSString *testPassword = @"testPassword";
+    
+    [[TWTTwitterAPI sharedInstance] signUpWithUsername:testUser andPassword:testPassword completion:^(NSError *error) {
+        if(error) {
+            XCTAssert(NO, @"Fail");
+        }
+        else {
+            XCTAssert(YES, @"Pass");
+        }
     }];
 }
 
