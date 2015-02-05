@@ -22,6 +22,7 @@
 		71B92E8D1A82CF6B006DB013 /* TWTTwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E8C1A82CF6B006DB013 /* TWTTwitterAPI.m */; };
 		71B92E911A82D2FE006DB013 /* TWTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E901A82D2FE006DB013 /* TWTUser.m */; };
 		71B92E941A82D30C006DB013 /* TWTTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B92E931A82D30C006DB013 /* TWTTweet.m */; };
+		71C82DC11A8300A000C7F52E /* TWTComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C82DC01A8300A000C7F52E /* TWTComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		71B92E901A82D2FE006DB013 /* TWTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTUser.m; sourceTree = "<group>"; };
 		71B92E921A82D30C006DB013 /* TWTTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTTweet.h; sourceTree = "<group>"; };
 		71B92E931A82D30C006DB013 /* TWTTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTTweet.m; sourceTree = "<group>"; };
+		71C82DBF1A8300A000C7F52E /* TWTComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTComposeViewController.h; sourceTree = "<group>"; };
+		71C82DC01A8300A000C7F52E /* TWTComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				71B92E5C1A82B439006DB013 /* TWTAppDelegate.m */,
 				71B92E611A82B439006DB013 /* TWTTweetsViewController.h */,
 				71B92E621A82B439006DB013 /* TWTTweetsViewController.m */,
+				71C82DBF1A8300A000C7F52E /* TWTComposeViewController.h */,
+				71C82DC01A8300A000C7F52E /* TWTComposeViewController.m */,
 				7192C4761A82E2C200A516FE /* TWTMenuViewController.h */,
 				7192C4771A82E2C200A516FE /* TWTMenuViewController.m */,
 				71B92E641A82B439006DB013 /* Main.storyboard */,
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7192C4781A82E2C200A516FE /* TWTMenuViewController.m in Sources */,
+				71C82DC11A8300A000C7F52E /* TWTComposeViewController.m in Sources */,
 				71B92E851A82B9E0006DB013 /* CDTweet.m in Sources */,
 				71B92E891A82BEAB006DB013 /* TWTTweetTableViewCell.m in Sources */,
 				71B92E601A82B439006DB013 /* TwitterClient.xcdatamodeld in Sources */,

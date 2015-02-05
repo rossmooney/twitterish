@@ -18,23 +18,36 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0M-qM-9Fk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dat-A1-5oB">
-                                        <rect key="frame" x="495" y="8" width="76" height="54"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Compose">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yX0-yZ-TY5">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <items>
+                                            <navigationItem title="Twitter(ish)" id="1rE-l4-yDB">
+                                                <barButtonItem key="leftBarButtonItem" title="Menu" id="WtG-Jz-lNm">
+                                                    <connections>
+                                                        <action selector="menuPressed:" destination="vXZ-lx-hvc" id="SIk-PL-eNy"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Compose" id="qW2-Wp-ErY">
+                                                    <connections>
+                                                        <action selector="composePressed:" destination="vXZ-lx-hvc" id="8P0-mk-ZvI"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="eGO-3Q-HEN"/>
+                                    <constraint firstItem="yX0-yZ-TY5" firstAttribute="top" secondItem="Q0M-qM-9Fk" secondAttribute="top" id="CN0-HV-9aY"/>
+                                    <constraint firstAttribute="trailing" secondItem="yX0-yZ-TY5" secondAttribute="trailing" id="Fpe-li-Ktk"/>
+                                    <constraint firstAttribute="height" constant="50" id="eGO-3Q-HEN"/>
+                                    <constraint firstItem="yX0-yZ-TY5" firstAttribute="leading" secondItem="Q0M-qM-9Fk" secondAttribute="leading" id="qCV-0x-lcT"/>
+                                    <constraint firstAttribute="bottom" secondItem="yX0-yZ-TY5" secondAttribute="bottom" id="wwr-sM-CXC"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="W4L-Od-NIx">
-                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TWTTweetTableViewCell" rowHeight="150" id="F2p-W9-z83" userLabel="Tweet Table View Cell" customClass="TWTTweetTableViewCell">
@@ -113,6 +126,8 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="W4L-Od-NIx" id="QFd-es-vSW"/>
+                        <segue destination="ojo-xE-kSa" kind="show" identifier="showMenu" id="HjY-8j-wj2"/>
+                        <segue destination="CDz-pX-MYE" kind="show" identifier="showCompose" id="fBd-O1-Stt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -209,6 +224,7 @@
                     <connections>
                         <outlet property="passwordField" destination="KxK-Kc-eGj" id="FME-wc-xTh"/>
                         <outlet property="usernameField" destination="Jle-Qv-SXs" id="Cn4-yZ-Zt3"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="showTweets" id="LAk-P0-V4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meM-2M-dqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,7 +233,7 @@
         <!--Compose View Controller-->
         <scene sceneID="IbY-B8-epf">
             <objects>
-                <viewController id="CDz-pX-MYE" userLabel="Compose View Controller" sceneMemberID="viewController">
+                <viewController id="CDz-pX-MYE" userLabel="Compose View Controller" customClass="TWTComposeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LVQ-ul-PeR"/>
                         <viewControllerLayoutGuide type="bottom" id="2fJ-Ym-b7J"/>
@@ -225,7 +241,7 @@
                     <view key="view" contentMode="scaleToFill" id="VYD-bo-QxE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mU8-AO-6sD" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -35,7 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Twitter API Methods 
+#pragma mark - IBActions
+
+- (IBAction)menuPressed:(id)sender {
+    [self performSegueWithIdentifier:@"showMenu" sender:self];
+}
+
+- (IBAction)composePressed:(id)sender {
+    [self performSegueWithIdentifier:@"showCompose" sender:self];
+}
+
+#pragma mark - Twitter API Methods
 
 - (void)updateTweets {
     __block TWTTweetsViewController *blockSelf = self;

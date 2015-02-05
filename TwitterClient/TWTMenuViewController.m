@@ -38,9 +38,11 @@
     [[TWTTwitterAPI sharedInstance] loginWithUsername:username andPassword:password completion:^(NSError *error) {
         if(!error) {
             //Logged in successful, show tweets
+            [self performSegueWithIdentifier:@"showTweets" sender:self];
         }
         else {
             //display error
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
 }
@@ -52,9 +54,11 @@
     [[TWTTwitterAPI sharedInstance] signUpWithUsername:username andPassword:password completion:^(NSError *error) {
         if(!error) {
             //Sign up successful, show tweets
+            [self performSegueWithIdentifier:@"showTweets" sender:self];
         }
         else {
             //display error
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
 }
